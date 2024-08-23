@@ -1,0 +1,19 @@
+<div>
+<input type="file" (change)="fileChangeEvent($event)" accept="image/png, image/jpeg, image/webp" />
+</div>
+<div class="cropper-wrapper">
+<image-cropper
+    [maintainAspectRatio]="true"
+    [imageChangedEvent]="imageChangedEvent"
+    
+    [roundCropper]="true"
+    format="jpeg"
+    (imageCropped)="imageCropped($event)"
+    (imageLoaded)="imageLoaded($event)"
+    (cropperReady)="cropperReady()"
+    (loadImageFailed)="loadImageFailed()"
+></image-cropper>
+</div>
+<div>
+<img [src]="croppedImage" />
+</div>
